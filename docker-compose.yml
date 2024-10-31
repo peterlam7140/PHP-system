@@ -1,0 +1,44 @@
+version: "1"
+
+services:
+    tester:
+        container_name: project2023-group12-php-container
+        image: project2023-group12-php-images
+        build:
+            context: .
+            dockerfile: dockerPhp/Dockerfile
+        environment:
+            DB_HOST: mysql
+        volumes:
+            - ./webpage:/var/www/html
+            # - ./file-server:/var/www/html/file-server
+        # restart: always
+        ports:
+            - "80:80"
+    mysql:
+        container_name: project2023-group12-mysql-container
+        image: project2023-group12-mysql-images
+        build:
+            context: .
+            dockerfile: dockerMysql/Dockerfile
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: seproject
+            MYSQL_PASSWORD: root
+            MYSQL_HOST: localhost
+        volumes:
+            # - ./dockerMysql/data:/var/lib/mysql
+            - ./dockerMysql/init:/docker-entrypoint-initdb.d
+        # restart: always
+        ports:
+            - "3306:3306"
+    phpmyadmin:
+        container_name: project2023-phpmyadmin-container
+        image: phpmyadmin/phpmyadmin
+        environment:
+            PMA_HOST: mysql
+            PMA_PORT: 3306
+        ports:
+            - "8080:80"
+        depends_on:
+            - mysql
