@@ -21,7 +21,7 @@
     include_once PATH_TEMPLATE . 'header.php';
 ?>
 
-<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+<script src='<?= URL_LIBS ?>fullcalendar@6.1.10/index.global.min.js'></script>
 <script>
 
 document.addEventListener('DOMContentLoaded', function() {

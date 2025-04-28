@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?= WEBSITE_NAME ?> (Admin)</title>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="<?= URL_LIBS ?>jquery.min.js"></script>
 
         <link href="<?= URL_LIBS ?>bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <script src="<?= URL_LIBS ?>bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -18,7 +18,7 @@
         <script type="text/javascript" src="<?= URL_LIBS ?>jquery-validation/dist/jquery.validate.min.js"></script>
         <script type="text/javascript" src="<?= URL_LIBS ?>jquery-validation/dist/additional-methods.min.js"></script>
 
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+        <link href="<?= URL_LIBS ?>fontawesome-free-6.7.2-web/css/all.min.css" rel="stylesheet">
 
         <link href="<?= URL_CSS ?>main.css?t=<?= time() ?>" rel="stylesheet">
 
